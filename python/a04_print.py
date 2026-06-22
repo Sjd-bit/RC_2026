@@ -10,7 +10,7 @@ def main():
     print(a)
     print("this is", "python", "class", sep="_", end=" ")
     print("this is", "python", "class", sep="-")
-
+#int와 float
 
 
 
