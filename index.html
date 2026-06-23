@@ -1,1 +1,160 @@
-<h1>나는 서정대입니다.</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정대's RC 자율주행 프로젝트</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-sub: #6c757d;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 25px;
+        }
+
+        /* 프로필 링크 버튼 */
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            background-color: #24292e;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-github:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        /* 섹션 타이틀 */
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        /* 작업물 카드 스타일 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e9ecef;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>안녕하세요, 서정대입니다 👋</h1>
+        <p class="subtitle">RC카 자율 주행 알고리즘 프로젝트 및 학습 저장소입니다.</p>
+        <a href="https://github.com/Sjd-bit/RC_2026" class="btn-github" target="_blank">
+            GitHub 저장소 방문하기
+        </a>
+    </header>
+
+    <h2>🚀 My Works & Labs</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🐍 Python 기초 학습</h3>
+            <p>변수, 자료형, 연산자 및 f-string 등 파이썬 기초 문제 풀이 코드 파일입니다.</p>
+            <a href="https://github.com/Sjd-bit/RC_2026/tree/main/python" target="_blank">코드 보러가기 &rarr;</a>
+        </div>
+
+        <div class="card">
+            <h3>🤖 자율주행 알고리즘</h3>
+            <p>향후 RC카에 적용할 주행 알고리즘 및 제어 코드가 업데이트될 예정입니다.</p>
+            <a href="#">준비 중...</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Sjd-bit. Built with GitHub Pages.</p>
+    </footer>
+</div>
+
+</body>
+</html>
