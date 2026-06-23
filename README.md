@@ -21,7 +21,7 @@ git config --global user.email "seojeongdae7204@gmail.com"
 2교시: if 조건문, bool 자료형 
 3교시: github io 페이지 만들기 
 4교시: if 조건문, 삼항 연산자, False로 변환되는 예
-5교시: 
-6교시:  
+5교시: 리스트 생성, C와 파이썬의 리스트 차이점, 리스트 연산
+6교시: 범위range를 통한 for문 반복 작업 수행
 7교시:  
 8교시: 
