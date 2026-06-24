@@ -1,0 +1,25 @@
+def print_hello(a : int, value:str)-> str:
+    # print("안녕하세요!", a)
+    # print("안녕하세요!")
+    # print("안녕하세요!")
+    for i in range(a):
+          print("안녕하세요!", value, i)
+    if isinstance(value,int): #파이썬에서 타입 체크할 때
+          for _ in range(value):
+                print("test")
+    return "execution OK!"
+"""
+이 함수는 예시 함수
+args:
+
+"""
+
+def main():
+    re = print_hello(10, "Hi")   #type hint
+    print(re)  
+
+
+
+
+if __name__ == "__main__":
+        main()
