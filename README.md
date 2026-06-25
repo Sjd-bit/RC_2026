@@ -46,4 +46,4 @@ git config --global user.email "seojeongdae7204@gmail.com"
 5교시: 클래스 메소드
 6교시: destructor, del, gc.collect
 7교시: property, 상속, 다중상속
-8교시:
+8교시: 표준 모듈
