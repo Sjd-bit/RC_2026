@@ -39,11 +39,11 @@ git config --global user.email "seojeongdae7204@gmail.com"
 
 06 25
 ---
-1교시: 
-2교시: 
-3교시: 
-4교시: 
-5교시: 회귀함수, 람다 함수, map, filter
-6교시: file 읽기 쓰기, open, with open
-7교시: generator, decorator, closure
-8교시: time_decorator
+1교시: pickle
+2교시: 클래스_딕션너리
+3교시: 스페셜 메소드
+4교시: 클래스 변수
+5교시: 클래스 메소드
+6교시: destructor, del, gc.collect
+7교시: property, 상속, 다중상속
+8교시:
