@@ -1,5 +1,5 @@
 def print_n_times(n, *args, abc="abc", defg="defg", **keyargs):
-    #순서대로 포지셔널, 디폴트, variable-length, keyward, variable-length-keyword
+    #포지셔널, 디폴트, variable-length, keyward, variable-length-keyword
     for i in range(n):
         print(args)
     print(abc, defg)

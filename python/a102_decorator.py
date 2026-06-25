@@ -1,26 +1,29 @@
 from functools import wraps
 
-def simpple_wrapper(value)""
-    def simpple_wrapper_inner(func):
+
+def simple_rapper(value):
+    def simple_rapper_inner(func):
         @wraps(func)
         def wrapper(*args, **kargs):
-            print("함수 실행 전 코드")
+            print(f"func 실행 전 코드.. {value}")
             result = func(*args, **kargs)
-            print("함수 실행 완료 코드")
+            print("func 실행 후 코드..")
             return result
-    return wrapper
-return simpple_wrapper_inner
+        return wrapper
+    return simple_rapper_inner
 
-@simpple_wrapper
+
+@simple_rapper("hi")
 def print_hello(n, v):
-    for _ in range(n): 
+    for _ in range(n):
         print(v)
+    return 123
 
 
 def main():
-    # wrapper = simpple_wrapper(print_hello)
-    # wrapper()
-    print_hello()
+    print(print_hello(3, "hi, hello"))
+    print(print_hello.__name__)
+
 
 if __name__ == "__main__":
-        main()
+    main()

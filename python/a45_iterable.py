@@ -5,7 +5,7 @@ class SimpleIter:
         pass
         
 
-
+# __iter__, __next__가 이터러블의 필요충분 조건
 def main():
     iter = SimpleIter(0, 10)
     print(isinstance(iter, Iterable))
