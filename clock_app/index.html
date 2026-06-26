@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계</title>
+    <style>
+        /* 화면 중앙 정렬 및 배경 스타일 */
+        body {
+            background-color: #121212;
+            color: #00FF00; /* 네온 그린 색상 */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* 시계 상자 스타일 */
+        .clock {
+            font-size: 5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 20px 40px;
+            border: 3px solid #00FF00;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 시계가 표시될 공간 -->
+    <div class="clock" id="clock">00:00:00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            // 시, 분, 초를 2자리 숫자로 맞추기 (예: 5초 -> 05초)
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // HTML 화면에 시간 반영
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        
+        // 1초(1000밀리초)마다 updateClock 함수를 실행
+        setInterval(updateClock, 1000);
+        
+        // 페이지가 로딩되자마자 00:00:00이 안 보이도록 즉시 한 번 실행
+        updateClock();
+    </script>
+</body>
+</html>
