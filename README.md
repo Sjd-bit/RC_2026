@@ -47,3 +47,14 @@ git config --global user.email "seojeongdae7204@gmail.com"
 6교시: destructor, del, gc.collect
 7교시: property, 상속, 다중상속
 8교시: 표준 모듈
+
+06 26
+---
+1교시: sys, os, url 모듈
+2교시: 
+3교시: 
+4교시: 
+5교시: 
+6교시: 
+7교시: 
+8교시: 
