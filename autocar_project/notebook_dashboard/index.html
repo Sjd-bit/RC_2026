@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocar 컨트롤 타워</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>🏎️ AUTOCAR DASHBOARD SYSTEMS</h1>
+        <div id="connection-status" class="status-badge disconnected">서버 주소 확인 중...</div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- 좌측: 영상 및 카메라 패널 -->
+        <div class="panel camera-panel">
+            <h2>🎥 Live Video Feed</h2>
+            <div class="video-container">
+                <img id="camera-stream" src="" alt="Camera Stream">
+            </div>
+            <div class="control-row">
+                <button onclick="changeCameraView('reset')">기본 뷰</button>
+                <button onclick="changeCameraView('ground')">바닥 보기</button>
+                <button onclick="changeCameraView('sky')">하늘 보기</button>
+            </div>
+            
+            <div class="slider-group">
+                <label>Pan (좌우): <span id="pan-val">90</span>°</label>
+                <input type="range" id="slider-pan" min="0" max="180" value="90" oninput="sendPanTilt()">
+                
+                <label>Tilt (상하): <span id="tilt-val">90</span>°</label>
+                <input type="range" id="slider-tilt" min="0" max="180" value="90" oninput="sendPanTilt()">
+            </div>
+        </div>
+
+        <!-- 우측: 제어 시스템 및 조이스틱 -->
+        <div class="panel control-panel">
+            <h2>🕹️ Flight & Drive Control</h2>
+            
+            <div class="joystick-wrapper">
+                <div id="joystick-zone">
+                    <div id="joystick-knob"></div>
+                </div>
+                <p class="hint">마우스/터치로 원 안을 드래그하여 조종하세요</p>
+            </div>
+
+            <div class="direction-buttons">
+                <td></td><button onclick="quickMove(0, 50)">▲ 전진</button><td></td>
+                <br>
+                <button onclick="quickMove(-30, 0)">◀ 좌</button>
+                <button id="btn-emergency" onclick="triggerEmergencyStop()">🛑 EMERGENCY STOP</button>
+                <button onclick="quickMove(30, 0)">우 ▶</button>
+                <br>
+                <td></td><button onclick="quickMove(0, -50)">▼ 후진</button><td></td>
+            </div>
+
+            <div class="slider-group">
+                <label>실시간 모터 스피드 제한 속도 제어</label>
+                <input type="range" id="slider-speed" min="-100" max="100" value="0" onchange="sendMotorSpeed(this.value)">
+            </div>
+        </div>
+
+        <!-- 하단: 상태 모니터 & 사운드 알림 구현부 -->
+        <div class="panel sound-status-panel">
+            <h2>🔊 Sound & Telemetry Data</h2>
+            <div class="sound-controls">
+                <div class="form-group">
+                    <input type="text" id="tts-input" placeholder="안내 음성 텍스트를 입력해 주세요.">
+                    <button onclick="sendTTS()">🗣️ TTS 발화</button>
+                </div>
+                <div class="melody-buttons">
+                    <button onclick="playMelody(440, 0.2)">도</button>
+                    <button onclick="playMelody(494, 0.2)">레</button>
+                    <button onclick="playMelody(523, 0.2)">미</button>
+                </div>
+            </div>
+            <hr>
+            <div class="telemetry-info">
+                <h3>Telemetry 현황</h3>
+                <ul>
+                    <li>엔진 동작 상태: <span id="tel-status">-</span></li>
+                    <li>현재 속도: <span id="tel-speed">0</span></li>
+                    <li>현재 조향각: <span id="tel-steer">0</span>°</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/main.js"></script>
+</body>
+</html>
