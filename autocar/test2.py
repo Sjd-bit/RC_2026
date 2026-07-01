@@ -66,3 +66,41 @@ sm.setCallback(onSoundMeter)
 input("input something")
 
 sm.stop()
+
+from pop import AudioRecord, AudioPlay
+import time
+
+with AudioRecord("output.wav") as ar:
+    record.run()
+    print("Recording...")
+
+    for _ in range(5):
+        time.sleep(1)
+
+    record.stop()
+    print("Recording stopped.")
+
+with AudioPlay("output.wav") as ap:
+    play.run()
+    print("Playing...")
+    for _ in range(12):
+        time.sleep(1)
+    
+    play.stop()
+    print("Playing stopped.")
+
+
+
+
+from gtts import gTTS
+import subprocess
+
+text = "And the saddeest thing. under the sun above."
+filename = "en_tts.mp3"
+
+tts = gTTS(text)
+tts.save(filename)
+with subprocess.Popen(['play', filename]) as p:
+    p.wait()
+    
+
